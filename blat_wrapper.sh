@@ -1,2 +1,4 @@
 #!/bin/bash
-cat temp | awk -v RS=">" '{ print $0 > "temp" NR }'
+gawk '{command = ("python gen.py")
+    print $0 | command
+    close(command)}' RS='>' bigfile.txt
