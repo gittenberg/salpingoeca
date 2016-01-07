@@ -23,8 +23,8 @@ database = "/home/martin/Research/salpingoeca/salpingoeca_rosetta_1_supercontig_
 records = list(SeqIO.parse(transcripts, "fasta"))
 #dna = list(SeqIO.parse(database, "fasta"))[0].seq
 
-for i, transcript in enumerate(records[10:30]):
-    print i, transcript.seq
+for i, transcript in enumerate(records):
+    print i
     with open("example.fasta", "w") as output_handle:
         SeqIO.write(transcript, output_handle, "fasta")
     current_outputfile = str(i).zfill(5) + ".psl"
